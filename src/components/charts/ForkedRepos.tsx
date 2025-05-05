@@ -27,12 +27,14 @@ const ForkedRepos = ({ repositories }: { repositories: Repository[] }) => {
         <BarChart accessibilityLayer data={mostForkedRepos}>
           <CartesianGrid vertical={false} />
           <XAxis
-            dataKey="language"
-            tickLine={false}
+            dataKey="repo"
+            tickLine={true}
             tickMargin={10}
-            interval={0}
-            angle={-45} 
-            textAnchor="end"
+            axisLine={true}
+            tickFormatter={(value) => value.slice(0,10)}
+            // interval={0}
+            // angle={-45} 
+            // textAnchor="end"
             height={60} 
           />
           <YAxis dataKey="count" />
